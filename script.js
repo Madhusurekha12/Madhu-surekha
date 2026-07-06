@@ -189,7 +189,6 @@ function createHearts(total){
         const heart = document.createElement("div");
 
         heart.className = "heart";
-
         heart.innerHTML = "❤️";
 
         heart.style.left = Math.random() * 100 + "vw";
@@ -207,12 +206,6 @@ function createHearts(total){
 
 }
 
-/* ===================================
-   RESTART BUTTON
-=================================== */
-
 restartBtn.addEventListener("click", () => {
-
     location.reload();
-
 });
