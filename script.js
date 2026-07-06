@@ -34,21 +34,13 @@ const restartBtn = document.getElementById("restartBtn");
 =================================== */
 
 const questionsList = [
-
-"Will you always be mine forever? ❤️",
-
-"Will you grow old with me? 🥹",
-
-"Will you hold my hand forever? 🤝",
-
-"Will you always choose me? ❤️",
-
-"Will you keep annoying me forever? 😂",
-
-"Will you make beautiful memories with me? 📸",
-
-"Will you always love me? ❤️"
-
+    "Will you always be mine forever? ❤️",
+    "Will you grow old with me? 🥹",
+    "Will you hold my hand forever? 🤝",
+    "Will you always choose me? ❤️",
+    "Will you keep annoying me forever? 😂",
+    "Will you make beautiful memories with me? 📸",
+    "Will you always love me? ❤️"
 ];
 
 let currentQuestion = 0;
@@ -57,73 +49,56 @@ let currentQuestion = 0;
    SHOW SECTION
 =================================== */
 
-function showSection(current, next){
+function showSection(current, next) {
+    current.classList.add("hidden");
+    next.classList.remove("hidden");
+    next.classList.add("fadeIn");
 
-current.classList.add("hidden");
-
-next.classList.remove("hidden");
-
-next.classList.add("fadeIn");
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 /* ===================================
    BUTTON EVENTS
 =================================== */
 
-startBtn.onclick = () => {
+startBtn.addEventListener("click", () => {
+    showSection(hero, welcome);
+});
 
-showSection(hero,welcome);
+promiseBtn.addEventListener("click", () => {
+    showSection(welcome, greeting);
+});
 
-};
+nextStory.addEventListener("click", () => {
+    showSection(greeting, story);
+});
 
-promiseBtn.onclick = () => {
+storyNext.addEventListener("click", () => {
+    showSection(story, whyYou);
+});
 
-showSection(welcome,greeting);
-
-};
-
-nextStory.onclick = () => {
-
-showSection(greeting,story);
-
-};
-
-storyNext.onclick = () => {
-
-showSection(story,whyYou);
-
-};
-
-proposalPage.onclick = () => {
-
-showSection(whyYou,proposal);
-
-};
+proposalPage.addEventListener("click", () => {
+    showSection(whyYou, proposal);
+});
 
 /* ===================================
    NO BUTTON
 =================================== */
 
-noBtn.addEventListener("mouseover",()=>{
+noBtn.addEventListener("mouseover", () => {
 
-const x=Math.random()*250-125;
+    const x = Math.random() * 250 - 125;
+    const y = Math.random() * 180 - 90;
 
-const y=Math.random()*180-90;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
 
-noBtn.style.transform=`translate(${x}px,${y}px)`;
-
-warning.innerHTML="😜 Nice try... You have to choose YES ❤️";
+    warning.textContent = "😜 Nice try... You have to choose YES ❤️";
 
 });
+
 /* ===================================
    YES BUTTON
 =================================== */
@@ -144,13 +119,13 @@ questionYes.addEventListener("click", () => {
 
     currentQuestion++;
 
-    if(currentQuestion < questionsList.length){
+    if (currentQuestion < questionsList.length) {
 
-        questionText.innerHTML = questionsList[currentQuestion];
+        questionText.textContent = questionsList[currentQuestion];
 
         createHearts(15);
 
-    }else{
+    } else {
 
         showSection(questions, lastQuestion);
 
@@ -168,13 +143,13 @@ foreverYes.addEventListener("click", () => {
 
     showSection(lastQuestion, letter);
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
         showSection(letter, celebration);
 
         createHearts(120);
 
-    },8000);
+    }, 8000);
 
 });
 
@@ -182,18 +157,18 @@ foreverYes.addEventListener("click", () => {
    HEART ANIMATION
 =================================== */
 
-function createHearts(total){
+function createHearts(total) {
 
-    for(let i = 0; i < total; i++){
+    for (let i = 0; i < total; i++) {
 
         const heart = document.createElement("div");
 
         heart.className = "heart";
-        heart.innerHTML = "❤️";
+        heart.textContent = "❤️";
 
         heart.style.left = Math.random() * 100 + "vw";
         heart.style.top = "100vh";
-        heart.style.fontSize = (18 + Math.random() * 30) + "px";
+        heart.style.fontSize = (18 + Math.random() * 28) + "px";
         heart.style.animationDuration = (4 + Math.random() * 3) + "s";
 
         document.body.appendChild(heart);
@@ -206,6 +181,12 @@ function createHearts(total){
 
 }
 
+/* ===================================
+   RESTART BUTTON
+=================================== */
+
 restartBtn.addEventListener("click", () => {
+
     location.reload();
+
 });
