@@ -182,4 +182,37 @@ foreverYes.addEventListener("click", () => {
    HEART ANIMATION
 =================================== */
 
-function createHearts(total
+function createHearts(total){
+
+    for(let i = 0; i < total; i++){
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML = "❤️";
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = "100vh";
+        heart.style.fontSize = (18 + Math.random() * 30) + "px";
+        heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 7000);
+
+    }
+
+}
+
+/* ===================================
+   RESTART BUTTON
+=================================== */
+
+restartBtn.addEventListener("click", () => {
+
+    location.reload();
+
+});
