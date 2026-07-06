@@ -1,1 +1,931 @@
+/* ===========================================
+   GOOGLE FONTS & RESET
+=========================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+background:#050505;
+color:white;
+overflow-x:hidden;
+
+}
+
+/* ===========================================
+BACKGROUND
+=========================================== */
+
+.background{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-10;
+
+background:
+radial-gradient(circle at top,
+#450000 0%,
+#120000 30%,
+#050505 70%,
+#000000 100%);
+
+}
+
+.gradient{
+
+position:absolute;
+width:100%;
+height:100%;
+
+background:
+
+linear-gradient(
+135deg,
+rgba(255,0,0,.15),
+transparent,
+rgba(255,40,40,.10)
+);
+
+animation:bgMove 12s infinite alternate;
+
+}
+
+@keyframes bgMove{
+
+0%{
+
+transform:scale(1);
+
+}
+
+100%{
+
+transform:scale(1.15);
+
+}
+
+}
+
+/* ===========================================
+PROGRESS BAR
+=========================================== */
+
+#progressBar{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:6px;
+
+background:#111;
+
+z-index:999;
+
+}
+
+#progress{
+
+height:100%;
+
+width:0%;
+
+background:
+
+linear-gradient(
+90deg,
+red,
+#ff4444,
+#ff0000
+);
+
+transition:.3s;
+
+}
+
+/* ===========================================
+MAIN STORY
+=========================================== */
+
+#story{
+
+width:100%;
+
+}
+
+.panel{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:80px 20px;
+
+}
+
+/* ===========================================
+GLASS CARD
+=========================================== */
+
+.glass{
+
+width:min(900px,95%);
+
+padding:50px;
+
+background:
+
+rgba(255,255,255,.06);
+
+border:
+
+1px solid rgba(255,0,0,.30);
+
+backdrop-filter:blur(18px);
+
+border-radius:25px;
+
+box-shadow:
+
+0 0 40px rgba(255,0,0,.20);
+
+text-align:center;
+
+}
+
+/* ===========================================
+TEXT
+=========================================== */
+
+h1{
+
+font-family:'Great Vibes',cursive;
+
+font-size:75px;
+
+color:#ff3b3b;
+
+margin-bottom:20px;
+
+text-shadow:
+
+0 0 20px red;
+
+}
+
+h2{
+
+font-family:'Cinzel',serif;
+
+font-size:42px;
+
+margin-bottom:25px;
+
+color:#fff;
+
+}
+
+h3{
+
+font-size:28px;
+
+margin-bottom:15px;
+
+}
+
+p{
+
+font-size:20px;
+
+line-height:1.9;
+
+color:#dddddd;
+
+margin-bottom:20px;
+
+}
+
+.subtitle{
+
+font-size:24px;
+
+color:#ff9999;
+
+}
+
+.tag{
+
+display:inline-block;
+
+padding:10px 25px;
+
+border-radius:40px;
+
+background:#b00000;
+
+margin-bottom:25px;
+
+font-weight:bold;
+
+}
+
+/* ===========================================
+BUTTONS
+=========================================== */
+
+button{
+
+padding:16px 45px;
+
+font-size:18px;
+
+font-weight:bold;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+background:
+
+linear-gradient(
+90deg,
+#b30000,
+red
+);
+
+color:white;
+
+transition:.4s;
+
+box-shadow:
+
+0 0 20px rgba(255,0,0,.5);
+
+}
+
+button:hover{
+
+transform:translateY(-5px) scale(1.05);
+
+box-shadow:
+
+0 0 35px red;
+
+}
+/* ===========================================
+TIMELINE
+=========================================== */
+
+.timeline{
+
+display:flex;
+flex-direction:column;
+gap:35px;
+
+}
+
+.timeline-item{
+
+display:flex;
+align-items:flex-start;
+gap:25px;
+
+padding:20px;
+
+border-left:3px solid #ff2a2a;
+
+background:rgba(255,255,255,.03);
+
+border-radius:15px;
+
+transition:.4s;
+
+}
+
+.timeline-item:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 30px rgba(255,0,0,.25);
+
+}
+
+.timeline-date{
+
+min-width:150px;
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#ff4d4d;
+
+}
+
+.timeline-content h3{
+
+color:#ffffff;
+
+margin-bottom:10px;
+
+}
+
+.timeline-content p{
+
+margin-bottom:0;
+
+}
+
+/* ===========================================
+LOVE SECTION
+=========================================== */
+
+.loveText{
+
+font-size:24px;
+
+line-height:2;
+
+color:#ffd5d5;
+
+text-shadow:0 0 10px rgba(255,0,0,.25);
+
+}
+
+/* ===========================================
+RING
+=========================================== */
+
+.ring{
+
+font-size:70px;
+
+margin-bottom:25px;
+
+animation:ringGlow 2s infinite ease-in-out;
+
+}
+
+@keyframes ringGlow{
+
+0%{
+
+transform:scale(1);
+
+filter:drop-shadow(0 0 5px gold);
+
+}
+
+50%{
+
+transform:scale(1.15);
+
+filter:drop-shadow(0 0 25px gold);
+
+}
+
+100%{
+
+transform:scale(1);
+
+filter:drop-shadow(0 0 5px gold);
+
+}
+
+}
+
+/* ===========================================
+PROPOSAL BUTTONS
+=========================================== */
+
+.proposalButtons{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+margin-top:35px;
+
+flex-wrap:wrap;
+
+}
+
+#yesBtn{
+
+background:linear-gradient(90deg,#ff0000,#ff4b4b);
+
+}
+
+#noBtn{
+
+background:#222;
+
+border:2px solid #ff2a2a;
+
+}
+
+#warningText{
+
+margin-top:20px;
+
+color:#ff7070;
+
+font-weight:600;
+
+min-height:30px;
+
+}
+
+/* ===========================================
+QUESTION BOX
+=========================================== */
+
+#questionBox{
+
+margin-top:25px;
+
+}
+
+#questionTitle{
+
+font-size:30px;
+
+margin-bottom:30px;
+
+color:#ffffff;
+
+}
+
+/* ===========================================
+LETTER
+=========================================== */
+
+.letter{
+
+text-align:left;
+
+}
+
+.letter h2{
+
+text-align:center;
+
+margin-bottom:35px;
+
+}
+
+#letterContent p{
+
+margin-bottom:22px;
+
+font-size:20px;
+
+line-height:2;
+
+}
+
+.signature{
+
+text-align:right;
+
+font-size:28px;
+
+font-family:'Great Vibes',cursive;
+
+color:#ff6666;
+
+margin-top:40px;
+
+}
+
+/* ===========================================
+LAST QUOTE
+=========================================== */
+
+.lastQuote{
+
+font-size:24px;
+
+font-style:italic;
+
+color:#ffe3e3;
+
+line-height:2;
+
+}
+
+/* ===========================================
+FINAL CELEBRATION
+=========================================== */
+
+.finalGlass{
+
+text-align:center;
+
+}
+
+#loveTitle{
+
+font-size:90px;
+
+animation:heartbeat 1.5s infinite;
+
+}
+
+.ending{
+
+font-size:28px;
+
+margin-top:20px;
+
+color:#ff9999;
+
+}
+
+@keyframes heartbeat{
+
+0%{
+
+transform:scale(1);
+
+}
+
+25%{
+
+transform:scale(1.08);
+
+}
+
+40%{
+
+transform:scale(.98);
+
+}
+
+60%{
+
+transform:scale(1.12);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+/* ===========================================
+   FLOATING HEARTS
+=========================================== */
+
+#hearts,
+#heartContainer{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-2;
+
+}
+
+.heart{
+
+position:absolute;
+
+top:-60px;
+
+font-size:24px;
+
+animation:heartFall linear forwards;
+
+opacity:.9;
+
+}
+
+@keyframes heartFall{
+
+0%{
+
+transform:
+translateY(-50px)
+translateX(0)
+rotate(0deg);
+
+opacity:0;
+
+}
+
+15%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(120vh)
+translateX(80px)
+rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================================
+   ROSE PETALS
+=========================================== */
+
+#petals,
+#roseContainer{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-3;
+
+}
+
+.petal{
+
+position:absolute;
+
+top:-80px;
+
+font-size:22px;
+
+animation:petalFall linear forwards;
+
+}
+
+@keyframes petalFall{
+
+0%{
+
+transform:
+translateY(-50px)
+rotate(0deg);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(120vh)
+translateX(-100px)
+rotate(720deg);
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================================
+   SPARKLES
+=========================================== */
+
+#sparkles,
+#sparkleContainer{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+.sparkle{
+
+position:absolute;
+
+width:6px;
+height:6px;
+
+border-radius:50%;
+
+background:#ffffff;
+
+box-shadow:
+
+0 0 10px #fff,
+0 0 20px red,
+0 0 35px red;
+
+animation:sparkleAnim 2s linear forwards;
+
+}
+
+@keyframes sparkleAnim{
+
+0%{
+
+opacity:0;
+
+transform:
+scale(.2);
+
+}
+
+30%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+scale(2);
+
+}
+
+}
+
+/* ===========================================
+   SECRET MESSAGE
+=========================================== */
+
+.hidden{
+
+display:none;
+
+}
+
+#secretMessage{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:
+rgba(0,0,0,.95);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:20px;
+
+z-index:9999;
+
+}
+
+.secretBox{
+
+max-width:700px;
+
+padding:40px;
+
+border-radius:20px;
+
+background:
+
+rgba(255,255,255,.06);
+
+border:
+
+1px solid rgba(255,0,0,.4);
+
+backdrop-filter:blur(18px);
+
+text-align:center;
+
+box-shadow:
+
+0 0 40px rgba(255,0,0,.35);
+
+}
+
+.secretBox h2{
+
+margin-bottom:25px;
+
+color:#ff5555;
+
+}
+
+.secretBox p{
+
+line-height:2;
+
+}
+
+/* ===========================================
+   GLOW EFFECT
+=========================================== */
+
+.glass:hover{
+
+transform:translateY(-8px);
+
+transition:.4s;
+
+box-shadow:
+
+0 0 45px rgba(255,0,0,.45);
+
+}
+
+/* ===========================================
+   SCROLLBAR
+=========================================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#080808;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#b00000;
+
+border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#ff1a1a;
+
+}
 
