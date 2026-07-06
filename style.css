@@ -1,1 +1,409 @@
+/* ===================================
+   GOOGLE FONT & RESET
+=================================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#050505;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* ===================================
+   BACKGROUND
+=================================== */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+
+    background:
+    radial-gradient(circle at top,
+    #5a0000 0%,
+    #220000 35%,
+    #090909 70%,
+    #000000 100%);
+}
+
+/* ===================================
+   MAIN CONTAINER
+=================================== */
+
+.container{
+    width:100%;
+}
+
+section{
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    padding:70px 25px;
+
+    text-align:center;
+}
+
+/* ===================================
+   TYPOGRAPHY
+=================================== */
+
+h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:72px;
+
+    color:#ff3b3b;
+
+    margin-bottom:20px;
+
+    text-shadow:
+    0 0 20px red;
+}
+
+h2{
+
+    font-size:34px;
+
+    margin-bottom:18px;
+
+}
+
+p{
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    max-width:800px;
+
+    color:#eeeeee;
+
+    margin-bottom:20px;
+}
+
+/* ===================================
+   BUTTONS
+=================================== */
+
+button{
+
+    padding:16px 40px;
+
+    margin-top:25px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#fff;
+
+    background:
+
+    linear-gradient(
+    90deg,
+    #8b0000,
+    #ff1f1f
+    );
+
+    transition:.35s;
+
+    box-shadow:
+    0 0 18px rgba(255,0,0,.4);
+}
+
+button:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.05);
+
+    box-shadow:
+    0 0 35px red;
+}
+
+/* ===================================
+   HIDDEN SECTIONS
+=================================== */
+
+.hidden{
+
+    display:none;
+}
+
+/* ===================================
+   STORY CARD
+=================================== */
+
+.story-card{
+
+    width:min(800px,95%);
+
+    margin:25px auto;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:
+
+    rgba(255,255,255,.05);
+
+    border:
+
+    1px solid rgba(255,0,0,.25);
+
+    backdrop-filter:blur(15px);
+
+    transition:.4s;
+}
+
+.story-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+
+    0 0 35px rgba(255,0,0,.25);
+}
+
+/* ===================================
+   LIST
+=================================== */
+
+ul{
+
+    list-style:none;
+
+    margin:20px 0;
+
+}
+
+li{
+
+    margin:12px 0;
+
+    font-size:22px;
+
+}
+
+/* ===================================
+   PROPOSAL BUTTONS
+=================================== */
+
+.buttons{
+
+    display:flex;
+
+    gap:25px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+
+}
+
+#warning{
+
+    margin-top:20px;
+
+    color:#ff7070;
+
+    font-weight:bold;
+
+    min-height:30px;
+}
+/* ===================================
+   LETTER SECTION
+=================================== */
+
+.letterBox{
+
+    width:min(900px,95%);
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,0,0,.25);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    backdrop-filter:blur(15px);
+
+    text-align:left;
+
+    line-height:2;
+
+    box-shadow:0 0 30px rgba(255,0,0,.2);
+
+}
+
+.letterBox h2{
+
+    margin-top:40px;
+
+    color:#ff4d4d;
+
+    text-align:right;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:42px;
+
+}
+
+.quote{
+
+    font-size:24px;
+
+    font-style:italic;
+
+    color:#ffd6d6;
+
+    max-width:700px;
+
+    margin-bottom:30px;
+
+}
+
+/* ===================================
+   QUESTIONS
+=================================== */
+
+.questionBox{
+
+    width:min(700px,95%);
+
+    background:rgba(255,255,255,.05);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    border:1px solid rgba(255,0,0,.3);
+
+    backdrop-filter:blur(15px);
+
+}
+
+#questionText{
+
+    margin-bottom:30px;
+
+}
+
+/* ===================================
+   CELEBRATION
+=================================== */
+
+#celebration{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+#celebration h1{
+
+    font-size:90px;
+
+    animation:heartbeat 1.5s infinite;
+
+}
+
+#celebration h2{
+
+    font-size:50px;
+
+    color:#ff6666;
+
+}
+
+#celebration p{
+
+    font-size:24px;
+
+    color:#ffe4e4;
+
+}
+
+/* ===================================
+   HEARTBEAT
+=================================== */
+
+@keyframes heartbeat{
+
+0%{
+
+transform:scale(1);
+
+}
+
+25%{
+
+transform:scale(1.08);
+
+}
+
+50%{
+
+transform:scale(0.96);
+
+}
+
+75%{
+
+transform:scale(1.1);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* ===================================
+   FADE ANIMATION
+=================================== */
+
+.fadeIn{
+
+    animation:fadeIn 1s ease;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translate
